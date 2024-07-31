@@ -10,15 +10,22 @@
     transition: all 0.1s;
 }
 
-/* Smooth Scrolling */
-html {
-    scroll-behavior: smooth;
-}
-
 @media (max-width: 640px) {
     body {
         @apply text-sm;
     }
+}
+
+/* Custom-scrollbar */
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    background-color: gray;
+    
+}
+::-webkit-scrollbar-thumb {
+    background-color: #072856;
+    border-radius: 10px;
 }
 
 /* Auth Buttton */
