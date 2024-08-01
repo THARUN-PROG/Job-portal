@@ -40,31 +40,58 @@ const Home = () => {
       }`}
     >
       <NavSmall>
-        <div className="flex items-center justify-end gap-4 max-lg:gap-4 font-[500]">
-          <Link to="/auth/login" className="auth-button">
+        <div className="flex items-center justify-end gap-6 max-lg:gap-4 font-[500]">
+          <Link
+            to="/auth/login"
+            className={` auth-button ${theme === "dark" && "auth-button-dark"}`}
+          >
             Login
           </Link>
-          <Link to="/auth/register" className="auth-button">
+          <Link
+            to="/auth/register"
+            className={` auth-button ${theme === "dark" && "auth-button-dark"}`}
+          >
             Signup
           </Link>
         </div>
       </NavSmall>
       <div
-        className={`landing absolute h-[400vh] w-full top-[8vh] ${
+        className={`landing absolute w-full top-[8vh] ${
           theme === "dark" && "bg-zinc-900 text-white"
         }`}
       >
-        <div className="page1 h-[92dvh] w-full">
-          <div className="flex items-center justify-center h-1/2">
-            <div className="text-center">
-              <h1 className="text-4xl font-bold">Welcome to Jobster</h1>
-              <p className="text-lg">The best place to find your dream job</p>
+        <div className={`page1 bg-gradient-to-r to-slate-900/30 border h-screen w-full flex max-lg:flex-col-reverse`}>
+          <div className="heroLeft h-full flex flex-col text-3xl items-center justify-center w-1/2 max-lg:w-full">
+            <div className="flex leftContent items-start justify-center gap-6 flex-col">
+              {["Where Potential", "Meets", "Opportunities"].map(
+                (text, index) => {
+                  return (
+                    <div
+                      className="masker flex items-center justify-center "
+                      key={index}
+                    >
+                      {index == 1 && (
+                        <span className="h-12 inline-block w-20 rounded-md mr-4 bg-red-700"></span>
+                      )}
+                      <h1>{text}</h1>
+                    </div>
+                  );
+                }
+              )}
             </div>
           </div>
-          <div data-scroll data-scroll-speed='-0.96' className="marquee flex flex-col -gap-12 py-12 items-center md:text-3xl max-lg:text-xs rounded-t-lg bg-slate-500/50 overflow-hidden whitespace-nowrap">
-            <MarqueeItem images={upperMarquee} from={0} to={'-100%'}/>  
-            <MarqueeItem images={lowerMarquee} from={'-100%'} to={0}/>  
+          <div className="heroRight w-1/2 max-lg:w-full h-1/2 md:h-full flex items-center justify-center">
+            <div className="cards h-full w-full relative flex items-center justify-center md:mb-24 max-lg:mt-20 -ml-6">
+              <div className="card absolute h-[65%] backdrop-blur-lg bg-gradient-to-b from-blue-300/30 max-lg:h-[90%] w-1/2 rounded-xl rotate-[10deg] origin-bottom-left shadow-[0_0_15px_gray]"></div>
+              <div className="card absolute h-[65%] backdrop-blur-lg bg-gradient-to-b from-violet-300/30 max-lg:h-[90%] w-1/2 rounded-xl rotate-[5deg] origin-bottom-left shadow-[0_0_15px_gray]"></div>
+              <div className="card absolute h-[65%] backdrop-blur-lg bg-gradient-to-b from-purple-300/30 max-lg:h-[90%] w-1/2 rounded-xl shadow-[0_0_15px_gray]"></div>
+            </div>
           </div>
+        </div>
+
+        <div className="marquee flex flex-col py-6 items-center md:text-3xl max-lg:text-xs rounded-t-lg bg-slate-900/90 shadow-[0_0_20px_gray] shadow-gray-300/40 overflow-hidden whitespace-nowrap ">
+          <MarqueeItem images={upperMarquee} from={0} to={"-100%"} />
+          <MarqueeItem images={lowerMarquee} from={"-100%"} to={0} />
         </div>
       </div>
     </div>
