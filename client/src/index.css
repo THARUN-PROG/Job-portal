@@ -39,3 +39,8 @@ body{
 .auth-button-dark{
     @apply before:bg-blue-900/50
 }
+
+/* Hero Card Styles */
+.hero-card{
+    @apply absolute h-[65%] backdrop-blur-lg bg-gradient-to-b max-lg:h-[90%] w-1/2 rounded-xl origin-bottom shadow-[0_0_15px_gray] flex items-center justify-center overflow-hidden;
+}
