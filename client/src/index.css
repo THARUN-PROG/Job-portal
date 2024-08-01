@@ -9,6 +9,9 @@
     box-sizing: border-box;
     transition: all 0.1s;
 }
+body{
+    background-color: aliceblue;
+}
 
 @media (max-width: 640px) {
     body {
@@ -30,5 +33,9 @@
 
 /* Auth Buttton */
 .auth-button{
-    @apply relative px-4 py-1 rounded-xl border border-teal-600 before:bg-gradient-to-br before:from-blue-800/40 before:to-blue-500/80 hover:border-blue-700/80 overflow-hidden before:absolute before:w-full before:bottom-0 before:left-0 before:z-[-99] before:h-0 hover:before:h-full before:transition-all before:duration-300 before:content-['']
+    @apply relative px-4 py-1 rounded-xl border border-slate-600 before:bg-slate-900/70 hover:text-white hover:shadow-[0_0_10px_gray] overflow-hidden before:absolute before:w-full before:bottom-0 before:left-0 before:z-[-99] before:h-0 hover:before:h-full before:transition-all before:duration-300 before:content-['']
+}
+
+.auth-button-dark{
+    @apply before:bg-blue-900/50
 }
