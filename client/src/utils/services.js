@@ -1,5 +1,3 @@
-
-
 const animateHover = (dets) =>{
     if(window.innerWidth < 720) return
     let gif = document.querySelector('.overlayGif')
