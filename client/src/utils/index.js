@@ -39,4 +39,10 @@ const upperMarquee = [
     "Customer Manager",
   ];
 
-  export { upperMarquee, lowerMarquee, tags };
+  const carouselImages = [
+    'page1-images/01.png',
+    'page1-images/02.png',
+    'page1-images/03.png',
+  ]
+
+  export { upperMarquee, lowerMarquee, tags, carouselImages };
