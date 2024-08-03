@@ -50,7 +50,7 @@ const Home = () => {
         <Hero />
 
         {/* Marquee Section */}
-        <div className="marquee flex flex-col py-6 items-center md:text-3xl max-lg:text-xs rounded-t-lg bg-slate-900/90 shadow-[0_0_20px_gray] shadow-gray-300/40 overflow-hidden whitespace-nowrap ">
+        <div id='clients' className="marquee flex flex-col py-6 items-center md:text-3xl max-lg:text-xs rounded-t-lg bg-slate-900/90 shadow-[0_0_20px_gray] shadow-gray-300/40 overflow-hidden whitespace-nowrap ">
           <MarqueeItem images={upperMarquee} from={0} to={"-100%"} />
           <MarqueeItem images={lowerMarquee} from={"-100%"} to={0} />
         </div>

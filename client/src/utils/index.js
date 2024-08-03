@@ -231,4 +231,28 @@ const upperMarquee = [
   ]
 
 
-  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles, jobs };
+  const testimonials = [
+    {
+      name : 'John Doe',
+      title : 'Software Developer',
+      company : 'Google',
+      image : 'testimonials/01.jpg',
+      quote : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      name : 'Jane Doe',
+      title : 'Data Scientist',
+      company : 'Facebook',
+      image : 'testimonials/02.jpg',
+      quote : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    },
+    {
+      name : 'Alice Doe',
+      title : 'Product Manager',
+      company : 'Amazon',
+      image : 'testimonials/03.webp',
+      quote : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+    }
+  ]
+
+  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles, jobs, testimonials };

@@ -23,14 +23,14 @@ const JobCard = ({ job }) => {
   return (
     <motion.div ref={ref} initial='initial' animate={controls} variants={cardVariants} transition={{ease: 'linear', duration: 1}} className="flex flex-col itemss-start shadow-[0_0_25px_gray] shadow-gray-500/40 backdrop-blur-md rounded-md p-4 ">
       <p className="text-xl font-semibold ">{job.title}</p>
-      <div className="company relative flex items-center cursor-pointer py-1 my-1 pr-4 w-fit">
+      <Link to={`/companies/${job.company}`} className="company relative flex items-center cursor-pointer py-1 my-1 pr-4 w-fit">
         <img
           src={job.logo}
           alt={job.company}
-          className={`w-20 h-10 rounded-full object-contain flex items-center mr-4 hover-effect ${theme === 'dark' && 'hover-effect-dark'}`}
+          className={`w-20 h-10 rounded-full object-contain flex items-center mr-4 ${theme === 'dark' && 'hover-effect-dark'}`}
         />
-        <p className={`font-semibold hover-effect ${theme === 'dark' && 'hover-effect-dark'} `}>{job.company}</p>
-      </div>
+        <p className={`font-semibold `}>{job.company}</p>
+      </Link>
       <p className="">{job.location}</p>
       <p>Salary - {job.salary}</p>
       <p>

@@ -18,7 +18,7 @@ export default function TestimonialCard({
   return (
     <div className="overflow-hidden relative shadow-[0_0_20px_gray] shadow-gray-300/40 py-8 bg-slate-900/90 text-white">
       <div
-        className="flex transition-transform ease-out duration-500 py-8 px-4 border-t border-b"
+        className="flex transition-transform ease-out duration-500 py-8 border-t border-b"
         style={{ transform: `translateX(-${curr * 100}vw)` }}
       >
        {children}
@@ -29,8 +29,9 @@ export default function TestimonialCard({
           {children.map((_, i) => (
             <div
               key={i}
+              onClick={() => setCurr(i)}
               className={`
-              transition-all w-2 h-2 bg-white rounded-full duration-300
+              transition-all w-2 h-2 bg-white cursor-pointer rounded-full duration-300
               ${curr === i ? "p-1 w-6 bg-gray-300/60" : "bg-opacity-50"}
             `}
             />

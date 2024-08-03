@@ -50,6 +50,7 @@ const Hero = () => {
 
   return (
     <div
+    id="home"
       className="page1 bg-gradient-to-r from-transparent to-slate-900/30 md:h-screen w-full flex max-lg:flex-col gap-6"
     >
       <div className="heroLeft h-full flex flex-col items-center justify-center w-1/2 max-lg:w-full">
@@ -171,10 +172,10 @@ const Hero = () => {
       </div>
 
       <div className="heroRight w-1/2 max-lg:w-full h-1/2 md:h-full flex items-center justify-center max-lg:pb-6 max-lg:px-4">
-        <div className="cards h-1/2 aspect-square relative flex items-center justify-center ">
+        <div className="cards h-2/3 aspect-square relative flex items-center justify-center ">
           <Carousel autoSlide autoSlideInterval={5000}>
             {carouselImages.map((image, index) => (
-              <img src={image} key={index} priority/>
+              <img src={image} key={index} priority='true'/>
             ))}
           </Carousel>
         </div>
