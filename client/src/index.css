@@ -56,8 +56,12 @@ body{
     }
 }
 
-
 .overlayGif{
     top: 0;
     transition: all linear 0.3s ;
+}
+
+/* Hover Link Effect */
+.hover-effect{
+    @apply before:h-[3px] before:w-0 before:absolute before:bottom-0 before:left-0 before:rounded-lg before:bg-slate-900 before:shadow-[0_0_10px_gray] before:shadow-slate-900/50 before:transition-all before:duration-500 hover:before:w-full
 }

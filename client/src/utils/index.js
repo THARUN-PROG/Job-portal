@@ -173,5 +173,62 @@ const upperMarquee = [
     "Customer Manager",
 ];
 
+  const jobs = [
+    {
+      title : 'Software Developer',
+      description : 'A software developer is a person concerned with facets of the software development process. Their work includes researching, designing, implementing, and testing software.',
+      salary : '$105,000 - $150,000',
+      location : 'San Francisco, CA',
+      tags : ['Software Engineer', 'Developer', 'Engineer'],
+      company : 'Google',
+      logo : 'company-logo/google.png',
+    },
+    {
+      title : 'Data Scientist',
+      description : 'A data scientist is a professional responsible for collecting, analyzing and interpreting large amounts of data to identify ways to help a business improve operations and gain a competitive edge over rivals.',
+      salary : '$95,000 - $130,000',
+      location : 'New York, NY',
+      tags : ['Data Scientist', 'Analyst', 'Engineer'],
+      company : 'Facebook',
+      logo : 'company-logo/facebook.png',
+    },
+    {
+      title : 'Product Manager',
+      description : 'A product manager is a professional role that is responsible for the development of products for an organization, known as the practice of product management.',
+      salary : '$110,000 - $140,000',
+      location : 'Seattle, WA',
+      tags : ['Product Manager', 'Manager', 'Product'],
+      company : 'Amazon',
+      logo : 'company-logo/amazon.png',
+    },
+    {
+      title : 'UX Designer',
+      description : 'A UX designer is a professional who designs the overall experience of a product or service for the end user. They are concerned with how the product feels and how it is laid out.',
+      salary : '$90,000 - $120,000',
+      location : 'Los Angeles, CA',
+      tags : ['Designer', 'UX', 'Engineer'],
+      company : 'Apple',
+      logo : 'company-logo/apple.png',
+    },
+    // {
+    //   title : 'Marketing Specialist',
+    //   description : 'A marketing specialist is a professional who manages marketing campaigns and promotions to increase sales and improve brand awareness. They are responsible for developing and executing marketing strategies.',
+    //   salary : '$80,000 - $110,000',
+    //   location : 'Austin, TX',
+    //   tags : ['Marketing', 'Specialist', 'Manager'],
+    //   company : 'Microsoft',
+    //   logo : 'company-logo/microsoft.png',
+    // },
+    // {
+    //   title : 'Financial Analyst',
+    //   description : 'A financial analyst is a professional who analyzes financial data to help companies make business decisions. They evaluate investment opportunities, prepare reports, and develop financial models.',
+    //   salary : '$70,000 - $100,000',
+    //   location : 'Chicago, IL',
+    //   tags : ['Financial', 'Analyst', 'Accountant'],
+    //   company : 'Tesla',
+    //   logo : 'company-logo/tesla.png',
+    // },
+  ]
 
-  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles };
+
+  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles, jobs };
