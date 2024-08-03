@@ -6,13 +6,16 @@ import Hero from "../components/Hero";
 import { lowerMarquee, upperMarquee } from "../utils";
 import Navbar from "../components/shared/Navbar";
 import TrendingJobs from "../components/TrendingJobs";
+import CallToAction from "../components/CallToAction";
+import Testimonials from "../components/Testimonials";
+import Footer from "../components/shared/Footer";
 
 const Home = () => {
 
   const theme = useSelector((state) => state.theme.value);
   return (
     <div
-      className={`min-h-[100dvh] w-full font-gupter overflow-x-hidden ${
+      className={`min-h-[100dvh] w-full relative font-gupter overflow-x-hidden ${
         theme === "dark" && "bg-zinc-900 text-white"
       }`}
     >
@@ -35,10 +38,14 @@ const Home = () => {
         </div>
       </Navbar>
       <div
-        className={`landing absolute w-full ${
+        className={`landing w-full ${
           theme === "dark" && "bg-zinc-900 text-white"
         }`}
       >
+
+        {/* Call to Action */}
+        <CallToAction />
+
         {/* Hero Section */}
         <Hero />
 
@@ -50,6 +57,13 @@ const Home = () => {
 
         {/* Trending Jobs Section */}
         <TrendingJobs />
+
+        {/* Testimonials */}
+        <Testimonials />
+
+        {/* Footer */}
+        <Footer />
+
       </div>
     </div>
   );

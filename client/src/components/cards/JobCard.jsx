@@ -1,7 +1,8 @@
-import { motion, stagger, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+import { useSelector } from "react-redux";
 
 const cardVariants = {
   initial: {y : '-40px' , opacity: 0.3, scale : 0.5},
@@ -10,6 +11,7 @@ const cardVariants = {
 
 const JobCard = ({ job }) => {
   
+  const theme = useSelector((state) => state.theme.value);
   const controls = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
@@ -25,9 +27,9 @@ const JobCard = ({ job }) => {
         <img
           src={job.logo}
           alt={job.company}
-          className="w-20 h-10 rounded-full object-contain flex items-center mr-4 hover-effect"
+          className={`w-20 h-10 rounded-full object-contain flex items-center mr-4 hover-effect ${theme === 'dark' && 'hover-effect-dark'}`}
         />
-        <p className="font-semibold hover-effect">{job.company}</p>
+        <p className={`font-semibold hover-effect ${theme === 'dark' && 'hover-effect-dark'} `}>{job.company}</p>
       </div>
       <p className="">{job.location}</p>
       <p>Salary - {job.salary}</p>
@@ -35,7 +37,7 @@ const JobCard = ({ job }) => {
         {job.description.slice(0, 100)}
         <Link
           to={`/jobs/${job._id}`}
-          className="hover:text-blue-900/70 hover-effect text-xs"
+          className={`hover:text-blue-900/70 hover-effect text-xs ${theme === 'dark' && 'hover-effect-dark'}`}
         >
           {" "}
           ...see more

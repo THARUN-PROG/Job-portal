@@ -174,7 +174,7 @@ const Hero = () => {
         <div className="cards h-1/2 aspect-square relative flex items-center justify-center ">
           <Carousel autoSlide autoSlideInterval={5000}>
             {carouselImages.map((image, index) => (
-              <img src={image} key={index} />
+              <img src={image} key={index} priority/>
             ))}
           </Carousel>
         </div>
