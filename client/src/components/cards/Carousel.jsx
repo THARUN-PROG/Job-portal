@@ -46,6 +46,7 @@ export default function Carousel({
           {slides.map((_, i) => (
             <div
               key={i}
+              onClick={()=>setCurr(i)}
               className={`
               transition-all w-2 h-2 bg-white rounded-full duration-300
               ${curr === i ? "p-1 w-5" : "bg-opacity-50"}

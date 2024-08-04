@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import CountUp from "react-countup";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";
@@ -9,7 +9,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const theme = useSelector((state) => state.theme.value);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
 
   const [jobTitle, setJobTitle] = React.useState("");
   const [location, setLocation] = React.useState("");
@@ -38,33 +39,45 @@ const Hero = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.geonames[0].name)
-        const cities = data.geonames.map((city) => `${city.name},${city?.countryCode}` );
-        console.log(cities);
+        console.log(data.geonames[0].name);
+        const cities = data.geonames.map(
+          (city) => `${city.name},${city?.countryCode}`
+        );
         setPredictedLocations(cities);
       })
       .catch((error) => console.error("Error:", error));
   };
 
   return (
-    <div className="page1 bg-gradient-to-r from-transparent to-slate-900/30 md:h-screen w-full flex max-lg:flex-col gap-6">
+    <div
+    id="home"
+      className="page1 bg-gradient-to-r from-transparent to-slate-900/30 md:h-screen w-full flex max-lg:flex-col gap-6"
+    >
       <div className="heroLeft h-full flex flex-col items-center justify-center w-1/2 max-lg:w-full">
         <div
           className="relative flex leftContent items-start justify-center flex-col md:w-3/4 px-4 gap-4 max-lg:mt-[10vh]"
           onMouseMove={(e) => animateHover(e)}
           onMouseLeave={() => removeHover()}
         >
-          <h1 className="z-[12]">Welcome to Jobster</h1>
-          <div className="absolute h-1/3 overlayGif md:w-1/2 w-full inset-0 z-[11] scale-75">
+          <h1 className="z-[12] welcome" id="welcome">
+            Welcome to Jobster
+          </h1>
+          <div
+            className="absolute h-1/3 overlayGif md:w-1/2 w-full inset-0 z-[11] scale-75"
+            id="image"
+          >
             <img
               src={"./images/hoverGif.gif"}
               className="overlayGifImg absolute md:w-[30vw] h-[40vh] max-lg:scale-50 max-lg:-ml-20 max-lg:-mt-20 -mt-12 max-lg:aspect-square opacity-75  rounded-full"
             />
           </div>
-          <h1 className="text-6xl max-lg:text-3xl font-bold stroke md:mix-blend-difference z-[12]">
+          <div
+            id="heading"
+            className="heading text-6xl max-lg:text-3xl font-bold stroke md:mix-blend-difference z-[12]"
+          >
             Find the Perfect Job for You.
-          </h1>
-          <p className="text-sm max-lg:text-xs z-[12]">
+          </div>
+          <p className="desc text-sm max-lg:text-xs z-[12]">
             Search your career opportunities through{" "}
             <CountUp end={28000} duration={5} suffix="+" /> jobs
           </p>
@@ -86,7 +99,10 @@ const Hero = () => {
                   predictedJobs.slice(0, 4).map((job, index) => {
                     return (
                       <div
-                        onClick={() => {setJobTitle(job); setPredictedJobs([])}}
+                        onClick={() => {
+                          setJobTitle(job);
+                          setPredictedJobs([]);
+                        }}
                         key={index}
                         className="text-sm z-[12] rounded-md hover:bg-gray-300/40 hover:border-b border-teal-500 cursor-pointer"
                       >
@@ -96,8 +112,8 @@ const Hero = () => {
                   })}
               </div>
             </div>
-            <div className="flex items-center gap-4 z-[12]">
-              <div className="flex flex-col">
+            <div className="flex items-start max-lg:gap-12 justify-start gap-4 z-[12]">
+              <div className="flex flex-col ">
                 <input
                   type="text"
                   placeholder="Enter your location"
@@ -110,7 +126,10 @@ const Hero = () => {
                     predictedLocations.slice(0, 4).map((location, index) => {
                       return (
                         <div
-                          onClick={() => { setLocation(location); setPredictedLocations([])}}
+                          onClick={() => {
+                            setLocation(location);
+                            setPredictedLocations([]);
+                          }}
                           key={index}
                           className="text-sm z-[12] rounded-md hover:bg-gray-300/40 hover:border-b border-teal-500 cursor-pointer"
                         >
@@ -122,7 +141,9 @@ const Hero = () => {
               </div>
               <button
                 disabled={jobTitle.length < 2 || location.length < 2}
-                onClick={()=>{navigate(`/search?jobTitle=${jobTitle}&location=${location}`)}}
+                onClick={() => {
+                  navigate(`/search?jobTitle=${jobTitle}&location=${location}`);
+                }}
                 className="p-2 rounded-full bg-gray-500/60 disabled:cursor-not-allowed"
               >
                 <FaSearch />
@@ -151,10 +172,10 @@ const Hero = () => {
       </div>
 
       <div className="heroRight w-1/2 max-lg:w-full h-1/2 md:h-full flex items-center justify-center max-lg:pb-6 max-lg:px-4">
-        <div className="cards h-1/2 aspect-square relative flex items-center justify-center ">
+        <div className="cards h-2/3 aspect-square relative flex items-center justify-center ">
           <Carousel autoSlide autoSlideInterval={5000}>
             {carouselImages.map((image, index) => (
-              <img src={image} key={index} />
+              <img src={image} key={index} priority='true'/>
             ))}
           </Carousel>
         </div>

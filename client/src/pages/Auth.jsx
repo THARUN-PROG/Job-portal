@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
+import Navbar from "../components/shared/Navbar";
 
 const About = () => {
   const location = useLocation();

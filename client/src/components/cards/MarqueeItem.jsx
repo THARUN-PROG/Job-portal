@@ -16,7 +16,7 @@ const MarqueeItem = ({ images, from, to }) => {
         {images.map((image, index) => {
           return (
             <img
-              className="h-28 w-40 pr-20 mix-blend-difference text-black fill-black stroke-black hover:scale-125 cursor-pointer transition-all duration-500"
+              className="h-28 w-40 max-lg:h-12 max-lg:w-28 pr-20 mix-blend-difference text-black fill-black stroke-black hover:scale-125 max-lg:scale-125 max-lg:hover:scale-150 cursor-pointer transition-all duration-500"
               src={`/images/${image}`}
               key={index}
             />
@@ -35,7 +35,7 @@ const MarqueeItem = ({ images, from, to }) => {
         {images.map((image, index) => {
           return (
             <img
-              className="h-28 w-40 pr-20 mix-blend-difference text-black fill-black stroke-black hover:scale-125 cursor-pointer transition-all duration-500"
+              className="h-28 w-40 max-lg:h-12 max-lg:w-28 pr-20 mix-blend-difference text-black fill-black stroke-black hover:scale-125 max-lg:scale-125 max-lg:hover:scale-150 cursor-pointer transition-all duration-500"
               src={`/images/${image}`}
               key={index}
             />
