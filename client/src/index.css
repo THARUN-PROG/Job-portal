@@ -10,7 +10,7 @@
     transition: all 0.1s;
 }
 body{
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
 @media (max-width: 640px) {
@@ -38,6 +38,10 @@ body{
 
 .auth-button-dark{
     @apply before:bg-blue-900/50
+}
+
+.auth-button-active{
+    @apply before:h-full before:text-white
 }
 
 /* Hero Card Styles */

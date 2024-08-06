@@ -8,9 +8,9 @@ const About = () => {
   const theme = useSelector((state) => state.theme.value);
   return (
     <div className={` ${theme === 'dark' && 'bg-zinc-900 text-white'} w-screen min-h-[100dvh] font-gupter`}>
-      <Navbar>
+      <Navbar otherClasses={'relative'}>
         {location.pathname === "/auth/register" ? (
-          <Link to="/auth/login" className="auth-button">Log In</Link>
+          <Link to="/auth" className="auth-button">Log In</Link>
         ) : (
           <Link to="/auth/register" className="auth-button">Sign Up</Link>
         )}

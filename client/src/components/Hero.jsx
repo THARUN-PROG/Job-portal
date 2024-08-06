@@ -51,7 +51,7 @@ const Hero = () => {
   return (
     <div
     id="home"
-      className="page1 bg-gradient-to-r from-transparent to-slate-900/30 md:h-screen w-full flex max-lg:flex-col gap-6"
+      className="page1 bg-gradient-to-r from-transparent to-slate-900/30 items-center w-full flex max-lg:flex-col gap-6"
     >
       <div className="heroLeft h-full flex flex-col items-center justify-center w-1/2 max-lg:w-full">
         <div
@@ -142,7 +142,7 @@ const Hero = () => {
               <button
                 disabled={jobTitle.length < 2 || location.length < 2}
                 onClick={() => {
-                  navigate(`/search?jobTitle=${jobTitle}&location=${location}`);
+                  navigate(`/dashboard/search?jobTitle=${jobTitle}&location=${location}`);
                 }}
                 className="p-2 rounded-full bg-gray-500/60 disabled:cursor-not-allowed"
               >
@@ -155,7 +155,7 @@ const Hero = () => {
             {tags.map((tag, index) => {
               return (
                 <Link
-                  to={`/search?jobTitle=${tag}&location=${location}`}
+                  to={`dashboard/search?jobTitle=${tag}&location=${location}`}
                   key={index}
                   className={`flex items-center rounded-xl px-2 py-[1px] z-[12] border ${
                     theme === "dark"
@@ -171,8 +171,8 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="heroRight w-1/2 max-lg:w-full h-1/2 md:h-full flex items-center justify-center max-lg:pb-6 max-lg:px-4">
-        <div className="cards h-2/3 aspect-square relative flex items-center justify-center ">
+      <div className="heroRight w-1/2 max-lg:w-full h-1/2 md:min-h-screen flex items-center justify-center max-lg:pb-6 max-lg:px-4">
+        <div className="cards w-3/4 max-sm:w-full aspect-square relative flex items-center justify-center ">
           <Carousel autoSlide autoSlideInterval={5000}>
             {carouselImages.map((image, index) => (
               <img src={image} key={index} priority='true'/>
