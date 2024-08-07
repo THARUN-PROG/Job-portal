@@ -2,10 +2,10 @@ import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import { connection } from "./database/connection.js"; 
+import { connection } from "./database/connection.js";
 import { errorMiddleware } from "./middlewares/error.js";
 import fileUpload from "express-fileupload";
-import userRouter from "./routes/userRouter.js"
+import userRouter from "./routes/userRouter.js";
 
 const app = express();
 config({ path: "./config/config.env" });
@@ -22,14 +22,18 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(fileUpload({
-  useTempFiles: true,
-  tempFileDir: "/temp/",
-})
+app.use(
+  fileUpload({
+    // we are using this to get the file that user will upload like resume and coverletter.
+    useTempFiles: true,
+    tempFileDir: "/temp/", //we can check this code syntax on their website
+  })
 );
 
-app.use("/api/v1/user", userRouter);
-connection();
+app.use("/api/v1/user", userRouter); //here we are calling the userRoutes.
+
+connection(); //here calling to the database and try to connect with database - mongoose.
+
 app.use(errorMiddleware); //to check the errors of the pages.
 
 export default app;
