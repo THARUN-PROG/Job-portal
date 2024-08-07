@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeToggle from "./shared/ToggleTheme";
+import ThemeToggle from "./ToggleTheme";
 import { Link } from "react-router-dom";
 
 const Navbar = ({children}) => {
