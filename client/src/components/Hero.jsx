@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import CountUp from "react-countup";
 import { FaSearch } from "react-icons/fa";
 import { useSelector } from "react-redux";

@@ -23,7 +23,7 @@ const Dashboard = () => {
     <div
       className={` ${
         theme === "dark" && "bg-zinc-900 text-white"
-      } w-screen h-[100dvh] font-gupter flex flex-col justify-between relative`}
+      } w-screen h-[100dvh] bg-gradient-to-r from-transparent to-zinc-700/30 font-gupter flex flex-col justify-between relative`}
     >
       <Sheet className="bg-transparent">
         <SheetTrigger className="absolute max-sm:flex hidden tracking-tighter z-[99] top-[50%] left-0 translate-y-[-50%] rounded-r-xl shadow-gray-600 shadow-md py-4">
@@ -65,9 +65,9 @@ const Dashboard = () => {
         ></div>
         <UserAvatar />
       </Navbar>
-      <div className={`flex flex-1 justify-between overflow-hidden`}>
+      <div className={`flex flex-1 justify-between h-full overflow-hidden`}>
         <LeftSidebar />
-        <div className="main overflow-y-scroll min-h-[400vh] flex-1">
+        <div className={`main flex-1 md:border-r ${theme === 'dark' && 'custom-scrollbar-dark'} overflow-y-scroll`}>
           <Outlet />
         </div>
         <RightSidebar />

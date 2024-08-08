@@ -9,6 +9,10 @@
     box-sizing: border-box;
     transition: all 0.1s;
 }
+*::selection{
+    background: rgba(186, 213, 236, 0.803);
+}
+
 body{
     background-color: #f0f8ff;
 }
@@ -21,14 +25,18 @@ body{
 
 /* Custom-scrollbar */
 ::-webkit-scrollbar {
-    width: 3px;
+    width: 5px;
     height: 3px;
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.221);
     
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #072856;
+    background-color: #07285684;
     border-radius: 10px;
+    cursor: grab;
+}
+::-webkit-scrollbar-thumb:active{
+    cursor: grabbing;
 }
 
 /* Auth Buttton */

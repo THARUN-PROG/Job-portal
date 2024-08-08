@@ -20,8 +20,8 @@ const UserAvatar = () => {
         </Avatar>
       </PopoverTrigger>
       <PopoverContent className={`z-[99] ${theme === "dark" ? "bg-zinc-900 text-white" : "bg-inherit backdrop-blur-lg"} hover:shadow-[0_0_20px_gray] shadow-gray-700 flex flex-col justify-between`}>
-        <Link to={`/users/userId`} className='w-full py-2 flex items-center justify-center'>View Profile</Link>
-        <Link to={`/logout`} className='w-full py-2 flex items-center justify-center gap-4 border-t'>
+        <Link to={`/users/userId`} className='w-full py-2 flex items-center justify-center hover:text-slate-600'>View Profile</Link>
+        <Link to={`/logout`} className='w-full py-2 flex items-center justify-center gap-4 border-t hover:text-slate-600'>
             <HiLogout />
             <span>Logout</span>
         </Link>
