@@ -7,6 +7,9 @@ import { errorMiddleware } from "./middlewares/error.js";
 import fileUpload from "express-fileupload";
 import userRouter from "./routes/userRouter.js";
 
+//importing job router in app.js file to see the changes made in it
+import jobRouter from "./routes/jobRouter.js";
+
 const app = express();
 config({ path: "./config/config.env" });
 
@@ -31,6 +34,7 @@ app.use(
 );
 
 app.use("/api/v1/user", userRouter); //here we are calling the userRoutes.
+app.use("/api/v1/job", jobRouter); //here we are calling the jobRoutes.
 
 connection(); //here calling to the database and try to connect with database - mongoose.
 
