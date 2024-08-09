@@ -1,17 +1,23 @@
-import React from 'react'
-import { useSearchParams } from 'react-router-dom';
+import { motion } from "framer-motion";
+import React from "react";
+import { useSearchParams } from "react-router-dom";
 
 const Search = () => {
-    const [searchParams] = useSearchParams();
-  const jobTitle = searchParams.get('jobTitle');
-  const location = searchParams.get('location');
+  const [searchParams] = useSearchParams();
+  const jobTitle = searchParams.get("jobTitle");
+  const location = searchParams.get("location");
   return (
-    <div>
-      This page will disply jobs for&nbsp;
+    <motion.div
+      initial={{ y: "20px" }}
+      animate={{ y: 0 }}
+      exit={{ y: "20px" }}
+      transition={{ ease: "linear", duration: 0.3 }}
+    >
+      {jobTitle ? <>This page will display jobs for&nbsp;</> : <>Search for jobs</>}
       {jobTitle}
       {location && ` in ${location}`}
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default Search
+export default Search;

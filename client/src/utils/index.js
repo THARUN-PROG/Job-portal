@@ -255,4 +255,23 @@ const upperMarquee = [
     }
   ]
 
-  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles, jobs, testimonials };
+  const links = [
+    {
+      name : 'Home',
+      url : '/dashboard'
+    },
+    {
+      name : 'Search',
+      url : '/dashboard/search'
+    },
+    {
+      name : 'My jobs',
+      url : '/dashboard/me'
+    },
+    {
+      name : 'Profile',
+      url : '/dashboard/profile'
+    },
+  ]
+
+  export { upperMarquee, lowerMarquee, tags, carouselImages, jobTitles, jobs, testimonials, links };
