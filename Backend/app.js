@@ -9,6 +9,7 @@ import userRouter from "./routes/userRouter.js";
 
 //importing job router in app.js file to see the changes made in it
 import jobRouter from "./routes/jobRouter.js";
+import applicationRouter from "./routes/applicationRouter.js";
 
 const app = express();
 config({ path: "./config/config.env" });
@@ -35,6 +36,8 @@ app.use(
 
 app.use("/api/v1/user", userRouter); //here we are calling the userRoutes.
 app.use("/api/v1/job", jobRouter); //here we are calling the jobRoutes.
+
+app.use("/api/v1/application", applicationRouter);
 
 connection(); //here calling to the database and try to connect with database - mongoose.
 
